@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>DevBoard - Real-Time Task Manager</title>
+</head>
+<body class="bg-gray-50 mx-[140px]">
+
+  <!-- Navbar -->
+  <nav class="flex items-center justify-between bg-white px-4 py-2 shadow-md">
+    <!-- Left Side: Logo + Text -->
+    <div class="flex items-center space-x-2">
+      <!-- Logo (non-interactive) -->
+      <div class="h-8 w-8">
+        <img src="assets/logo.png" alt="Logo">
+      </div>
+      <!-- Text -->
+      <span class="text-lg font-bold text-gray-800">Dev<span class="text-black">Board</span></span>
+    </div>
+
+    <!-- Right Side: Check + Number + Theme Button -->
+    <div class="flex items-center space-x-4">
+      <!-- Check icon + number -->
+      <div class="flex items-center bg-indigo-100 text-indigo-600 rounded-full px-3 py-1 space-x-2">
+        <input type="checkbox" checked class="form-checkbox h-4 w-4 text-indigo-600 rounded-md">
+        <span id="check-count" class="font-medium">23</span>
+      </div>
+      <!-- Circular Theme Button -->
+      <div id="toggle-theme" class="h-8 w-8 cursor-pointer">
+        <img src="assets/theme-btn.png" alt="Theme Toggle">
+      </div>
+    </div>
+  </nav>
+
+  <!-- Container -->
+  <div class="min-h-screen p-6">
+    <!-- Top Section / Header -->
+    <div class="flex  justify-between md:flex-row md:items-center space-y-4 md:space-y-0 mb-6">
+      <!-- Left items -->
+      <div class="flex flex-wrap items-center gap-[11rem]">
+        <!-- "Task Assigned" box -->
+        <div class="bg-white rounded-lg shadow p-4">
+            <p class="text-sm text-gray-500">Task Assigned</p>
+            <div class="flex">
+            <img class="mr-10" src="assets/checkbox.png" alt="">
+          <p id="task-assigned" class="text-xl font-bold">9</p>
+        </div>
+        </div>
+        <!-- "Discover Something New" banner -->
+        <a href="blog/blog.html">
+        <div  class="flex  bg-indigo-500 text-white rounded-lg shadow px-6 py-4">
+            <img class="h-9 w-9" src="assets/board.png" alt="">
+          <h2 class="text-lg leading-[25px] font-semibold">Discover Something <br> New Today!</h2>
+        </div>
+        </a>
+        <!-- Date box showing current date & time -->
+        <div class="bg-white rounded-lg shadow p-4 w-full md:w-auto">
+            <img src="assets/calender.png" alt="">
+          <p id="current-date" class="text-sm text-gray-500"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Grid -->
+    <!-- 4 columns: 3 for cards, 1 for the Activity Log -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <!-- Cards Grid -->
+      <div class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="bg-[rgb(231,234,255)] rounded-lg shadow p-4">
+            <p class="rounded-[5px] bg-[#FFFFFF] mr-[150px] p-[7px]">ShopEase<p>
+          <h3 class="font-semibold text-gray-800">Fix Mobile Button Issue</h3>
+          <p class="text-sm text-gray-500 mt-1 p-[10px] rounded-[5px] bg-[#FFFFFF]">Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+            and ensure onClick works properly</p>
+          <Div class="flex justify-between">
+          <p class="text-xs text-gray-400 mt-2">Deadline <br> 21 March 2025</p>
+          <button class="complete-btn inline-block bg-[#3752FD] text-white text-xs font-semibold mt-2 px-2 py-1 rounded" data-task-title="Fix Mobile Button Issue">
+            Complete
+          </button>
+        </Div>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-[rgb(231,234,255)] rounded-lg shadow p-4">
+            <p class="rounded-[5px] bg-[#FFFFFF] mr-[150px] p-[7px]">CloudSync<p>
+          <h3 class="font-semibold text-gray-800">Add Dark Mode</h3>
+          <p class="text-sm text-gray-500 mt-1 p-[10px] rounded-[5px] bg-[#FFFFFF]">Store the user's preference in localStorage, update CSS variables dynamically, and apply a smooth transition effect.</p>
+          <Div class="flex justify-between">
+          <p class="text-xs text-gray-400 mt-2">Deadline <br> 21 March 2025</p>
+          <button class="complete-btn inline-block bg-[#3752FD] text-white text-xs font-semibold mt-2 px-2 py-1 rounded" data-task-title="Fix Mobile Button Issue">
+            Complete
+          </button>
+        </Div>
+        </div>
+        <!-- Card 3 -->
+        <div class="bg-[rgb(231,234,255)] rounded-lg shadow p-4">
+            <p class="rounded-[5px] bg-[#FFFFFF] mr-[150px] p-[7px]">SwiftPay<p>
+          <h3 class="font-semibold text-gray-800">Optimize  Home page </h3>
+          <p class="text-sm text-gray-500 mt-1 p-[10px] rounded-[5px] bg-[#FFFFFF]">Optimize the homepage by improving load speed, enhancing user experience, and ensuring clear navigation. Focus on responsive design, SEO, and engaging visuals for better conversion</p>
+          <Div class="flex justify-between">
+          <p class="text-xs text-gray-400 mt-2">Deadline <br> 21 March 2025</p>
+          <button class="complete-btn inline-block bg-[#3752FD] text-white text-xs font-semibold mt-2 px-2 py-1 rounded" data-task-title="Fix Mobile Button Issue">
+            Complete
+          </button>
+        </Div>
+        </div>
+        <!-- Card 4 -->
+        <div class="bg-[rgb(231,234,255)] rounded-lg shadow p-4">
+            <p class="rounded-[5px] bg-[#FFFFFF] mr-[150px] p-[7px]">Meta<p>
+          <h3 class="font-semibold text-gray-800">Add new emoji 🤲</h3>
+          <p class="text-sm text-gray-500 mt-1 p-[10px] rounded-[5px] bg-[#FFFFFF]"> Focus on responsive design, SEO, and engaging visuals for better conversions</p>
+          <Div class="flex justify-between">
+          <p class="text-xs text-gray-400 mt-2">Deadline <br> 21 March 2025</p>
+          <button class="complete-btn inline-block bg-[#3752FD] text-white text-xs font-semibold mt-2 px-2 py-1 rounded" data-task-title="Fix Mobile Button Issue">
+            Complete
+          </button>
+        </Div>
+        </div>
+        <!-- Card 5 -->
+        <div class="bg-[rgb(231,234,255)] rounded-lg shadow p-4">
+            <p class="rounded-[5px] bg-[#FFFFFF] mr-[150px] p-[7px]">Google LLC<p>
+          <h3 class="font-semibold text-gray-800">Integrate OpenAI API </h3>
+          <p class="text-sm text-gray-500 mt-1 p-[10px] rounded-[5px] bg-[#FFFFFF]">Integrate the OpenAI API to provide smart job matches, resume analysis, and personalized career insights</p>
+          <Div class="flex justify-between">
+          <p class="text-xs text-gray-400 mt-2">Deadline <br> 21 March 2025</p>
+          <button class="complete-btn inline-block bg-[#3752FD] text-white text-xs font-semibold mt-2 px-2 py-1 rounded" data-task-title="Fix Mobile Button Issue">
+            Complete
+          </button>
+        </Div>
+        </div>
+        <!-- Card 6 -->
+        <div class="bg-[rgb(231,234,255)] rounded-lg shadow p-4">
+            <p class="rounded-[5px] bg-[#FFFFFF] mr-[150px] p-[7px]">Glassdoar<p>
+          <h3 class="font-semibold text-gray-800">Improve Job searching </h3>
+          <p class="text-sm text-gray-500 mt-1 p-[10px] rounded-[5px] bg-[#FFFFFF]">Enhance job searching by implementing advanced filters, real-time updates, and AI-driven recommendations</p>
+          <Div class="flex justify-between">
+          <p class="text-xs text-gray-400 mt-2">Deadline <br> 21 March 2025</p>
+          <button class="complete-btn inline-block bg-[#3752FD] text-white text-xs font-semibold mt-2 px-2 py-1 rounded" data-task-title="Fix Mobile Button Issue">
+            Complete
+          </button>
+        </Div>
+        </div>
+
+
+      </div>
+
+      <!-- Activity Log -->
+      <div class="bg-white rounded-lg shadow p-4 md:col-span-1">
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="text-lg font-semibold text-gray-800">Activity Log</h3>
+          <button id="clear-activity" class="bg-red-100 text-red-600 text-xs font-semibold px-2 py-1 rounded">
+            Clear Activity
+          </button>
+        </div>
+        <ul id="activity-log" class="space-y-2 text-sm text-gray-600">
+         
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Logic -->
+  <script src="script.js">
+  
+  </script>
+  
+</body>
+</html>

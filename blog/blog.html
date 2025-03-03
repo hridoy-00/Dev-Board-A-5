@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>DOM Questions and Answers</title>
+</head>
+<body class="bg-gray-100 min-h-screen mx-[140px]">
+
+    <nav class="flex items-center justify-between bg-white px-4 py-2 shadow-md">
+        <!-- Left Side: Logo + Text -->
+        <div class="flex items-center space-x-2">
+          <!-- Logo (non-interactive) -->
+          <div class="h-8 w-8">
+            <img src="../assets/logo.png" alt="Logo">
+          </div>
+          <!-- Text -->
+          <span class="text-lg font-bold text-gray-800">Dev<span class="text-black">Board</span></span>
+        </div>
+    
+        <!-- Right Side: Check + Number + Theme Button -->
+         <a href="../index.html">
+        <button class="bg-[#3752FD] text-white text-3xl font-bold px-8 text-[22px] leading-[2.25rem] py-2 rounded-[30px]">
+            Back To Desk
+          </button>
+        </a>
+      </nav>
+
+  <!-- Container -->
+  <div class="w-full max-w-5xl mx-auto p-4 space-y-4">
+
+    <!-- Card 1 -->
+    <div class="bg-white shadow-md rounded p-6 w-full">
+      <h2 class="text-xl font-semibold mb-2">
+        Question-1: What are the different ways to select an element in the DOM?
+      </h2>
+      <p class="text-gray-700">
+        <strong>Answer:</strong> You can use various methods such as 
+        <code>document.getElementById('id')</code>, 
+        <code>document.getElementsByClassName('class')</code>, 
+        <code>document.getElementsByTagName('tag')</code>, 
+        <code>document.querySelector('CSS selector')</code>, 
+        and <code>document.querySelectorAll('CSS selector')</code> 
+        to select elements in the DOM.
+      </p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white shadow-md rounded p-6 w-full">
+      <h2 class="text-xl font-semibold mb-2">
+        Question-2: What is the difference between innerHTML, innerText, and textContent?
+      </h2>
+      <p class="text-gray-700">
+        <strong>Answer:</strong> 
+        <code>innerHTML</code> gets or sets the HTML markup within an element (including tags). 
+        <code>innerText</code> gets or sets the text that is visually rendered, ignoring hidden elements. 
+        <code>textContent</code> gets or sets all the text inside an element, regardless of styling or hidden elements, but does not parse HTML tags.
+      </p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white shadow-md rounded p-6 w-full">
+      <h2 class="text-xl font-semibold mb-2">
+        Question-3: What is event delegation in the DOM?
+      </h2>
+      <p class="text-gray-700">
+        <strong>Answer:</strong> Event delegation is a technique where you attach a single event 
+        listener to a parent element instead of adding multiple listeners to each child. When an event 
+        occurs on a child element, it "bubbles up" to the parent, allowing the parent to handle 
+        the event for all child elements.
+      </p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="bg-white shadow-md rounded p-6 w-full">
+      <h2 class="text-xl font-semibold mb-2">
+        Question-4: What is event bubbling in the DOM?
+      </h2>
+      <p class="text-gray-700">
+        <strong>Answer:</strong> Event bubbling is the process where an event triggered on a child 
+        element moves upward through its ancestors. If the event isn't stopped, it continues until 
+        it reaches the <code>document</code> root, allowing ancestor elements to handle the same event.
+      </p>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="bg-white shadow-md rounded p-6 w-full">
+      <h2 class="text-xl font-semibold mb-2">
+        Question-5: How do you create, add, and remove elements using JavaScript?
+      </h2>
+      <p class="text-gray-700">
+        <strong>Answer:</strong> You can create elements with 
+        <code>document.createElement('tag')</code>. To add them to the DOM, use 
+        <code>appendChild</code> or <code>append</code> on a parent node. 
+        To remove an element, you can call <code>element.remove()</code> or 
+        <code>parent.removeChild(child)</code>.
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
