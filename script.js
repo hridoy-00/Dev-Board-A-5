@@ -1,4 +1,3 @@
-  // Update current date/time every second.
   function updateDateTime() {
     const now = new Date();
     document.getElementById('current-date').textContent = now.toLocaleString();
@@ -6,7 +5,6 @@
   updateDateTime();
   setInterval(updateDateTime, 1000);
 
-  // Toggle theme when clicking the theme button (right nav bar).
   const toggleThemeBtn = document.getElementById('toggle-theme');
   toggleThemeBtn.addEventListener('click', () => {
     const body = document.body;
@@ -17,7 +15,6 @@
     }
   });
 
-  // Complete button functionality.
   const completeButtons = document.querySelectorAll('.complete-btn');
   completeButtons.forEach(button => {
     button.addEventListener('click', function () {
@@ -40,7 +37,6 @@
     });
   });
 
-  // Clear Activity log.
   document.getElementById('clear-activity').addEventListener('click', () => {
     document.getElementById('activity-log').innerHTML = "";
   });
